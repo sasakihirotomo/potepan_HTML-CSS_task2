@@ -1,0 +1,1266 @@
+/*
+    基本的にheightは使わない → margin, paddingを使う
+    width指定はmax-width:100%とともに指定(unitやlayoutの枠について)
+    Unit、layoutにはレスポンシブ時のレイアウト崩れを防ぐためpadding(横)を指定
+ */
+
+
+* {
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    outline: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+li {
+    list-style: none;
+}
+
+.el_articleTitle {
+    color: black;
+    font-size: 46px;
+    position: relative;
+}
+
+.el_articleTitle > br {
+    display: none;
+}
+
+.el_articleTitle:after {
+    background-color: #f79315;
+    bottom: -24px;
+    content: "";
+    font-family: "Noto Sans JP", sans-serif;
+    height: 6px;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    width: 48px;
+}
+
+.el_btn {
+    background-color: #f79315;
+    display: inline-block;
+    color: white;
+    font-family: "Noto Sans JP", sans-serif;
+}
+
+.el_copyRight {
+    color: white;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+/* ------------------------------------------------------------------- 
+    headerレイアウト
+ ---------------------------------------------------------------------- */
+.ly_header {
+    background-color: white;
+    padding: 20px 0;
+    width: 100%;
+}
+
+.bl_header_inner {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 100%;
+    width: 1040px;
+}
+
+#el_hamburgerMenuCheck,
+.bl_hamburgerMenu_btn {
+    display: none;
+}
+
+.bl_header_logoWrapper {
+    width: 184px;
+}
+
+.bl_header_nav {
+    display: flex;
+}
+
+.bl_header_nav_item {
+    display: inline-block;
+    line-height: 1;
+    margin-right: 25px;
+    text-align: center;
+}
+
+.bl_header_nav_item:last-child {
+    margin-right: 0;
+}
+
+.bl_header_nav_link {
+    color: black;
+    font-size: 14px;
+}
+
+.bl_header_nav_link_subTxt {
+    font-size: 10px;
+}
+
+.bl_header_btn {
+    border-radius: 20px;
+    font-size: 12px;
+    padding: 14px 20px;
+}
+
+/* ---------------------------------------------------------------------- 
+    heroレイアウト
+ ------------------------------------------------------------------------- */
+.bl_hero {
+    background-color: #f79315;
+}
+
+.bl_hero_inner {
+    background-image: url(images/asset\ 26.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 70px 0;
+    width: 100%;
+}
+
+.bl_hero_txtWrapper {
+    margin: 0 auto;
+    max-width: 100%;
+    width: 1040px;
+}
+
+.bl_hero_txt {
+    color: white;
+    font-size: 40px;
+    letter-spacing: 2px;
+    margin-left: 144px;
+}
+
+/* ------------------------------------------------------------------------- 
+    aboutレイアウト
+ ---------------------------------------------------------------------------- */
+.bl_aboutUnit {
+    background-color: #fcfaf5;
+    padding: 0 48px;
+}
+
+.bl_aboutUnit_inner {
+    margin: 0 auto;
+    max-width: 100%;
+    width: 1040px;
+}
+
+.bl_article_titleWrapper {
+    padding: 72px 0;
+    text-align: center;
+}
+
+.bl_aboutUnit_txtWrapper {
+    text-align: center;
+}
+
+.bl_aboutUnit_txt {
+    color: #222;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 2;
+    margin-bottom: 16px;
+}
+
+.bl_aboutUnit_txt:last-child {
+    margin-bottom: 96px;
+}
+
+.bl_aboutUnit_emphasisTxt {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 2.5;
+    margin-bottom: 16px;
+}
+
+/* -------------------------------------------------------------------------- 
+    featureレイアウト
+ ----------------------------------------------------------------------------- */
+.bl_featureUnit {
+    background-color: white;
+    border-radius: 24px;
+    padding: 0 40px;
+}
+
+.bl_featureUnit_inner {
+    margin: 0 auto;
+    padding-bottom: 56px;
+    position: relative;
+    max-width: 100%;
+    width: 960px;
+}
+
+.bl_featureUnit_balloon {
+    background: linear-gradient(white 0, white 50%, transparent 100%);
+    border-radius: 50%;
+    left: 50%;
+    padding: 28px;
+    position: absolute;
+    top: -48px;
+    transform: translateX(-50%);
+    width: 96px;
+}
+
+.bl_featureUnit_titleWrapper {
+    padding: 32px 0;
+    text-align: center;
+}
+
+.bl_featureUnit_title {
+    font-size: 30px;
+}
+
+.bl_featureUnit_flexUnit {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bl_featureUnit_item {
+    width: 31%;
+}
+
+.bl_feature_catch {
+    background-color: black;
+    border-radius: 16px;
+    color: white;
+    font-size: 14px;
+    margin-bottom: 16px;
+    padding: 2px 0;
+    text-align: center;
+}
+
+.bl_feature_imgWrapper {
+    margin-bottom: 16px;
+}
+
+.bl_feature_txt {
+    margin-left: 44px;
+    position: relative;
+}
+
+.bl_feature_txt::before {
+    background-image: url(images/icon-finger.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: "";
+    height: 24px;
+    left: -32px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+}
+
+/* --------------------------------------------------------------------------------
+    panelレイアウト
+ ---------------------------------------------------------------------------------- */
+.bl_panelUnit {
+    display: flex;
+    justify-content: space-around;
+    padding: 72px 24px;
+}
+
+.bl_panelUnit_item {
+    width: 46%;
+}
+
+.bl_panel {
+    border: 1px solid #7070701A;
+    border-radius: 8px;
+}
+
+.bl_panel_titleWrapper {
+    background-color: #f79315;
+    border-radius: 8px 8px 0 0;
+    color: white;
+    padding: 16px 0 24px;
+    text-align: center;
+}
+
+.bl_panel_subTitle {
+    font-size: 14px;
+}
+
+.bl_panel_title {
+    font-size: 20px;
+}
+
+.bl_panel_txtWrapper {
+    background-color: white;
+    padding: 32px 16px;
+}
+
+.bl_panel_emphasisTxt {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.bl_panel_emphasisTxt:before {
+    content: '¥';
+    font-size: 28px;
+    margin-right: 4px;
+}
+
+.bl_panel_emphasisTxt:after {
+    content: '税別';
+    font-size: 12px;
+    margin-left: 4px;
+}
+
+.bl_panel_txt {
+    color: rgba(34, 34, 34, 0.6);
+    font-weight: 400;
+    line-height: 2;
+}
+
+.bl_panel_infoWrapper {
+    align-items: center;
+    background-color: #fff8ea;
+    display: flex;
+    height: 60px;
+    justify-content: center;
+}
+
+.bl_panel_infoWrapper:last-child {
+    border-radius: 0 0 8px 8px;
+}
+
+.bl_panel_info {
+    color: #222;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.bl_panel_subInfo {
+    color: #f7961d;
+    font-size: 14px;
+    font-weight: 400;
+    margin-left: 4px;
+}
+
+.bl_panel_btn {
+    color: #f79214;
+    font-size: 14px;
+    position: relative;
+}
+
+.bl_panel_btn::before {
+    border: 1px solid #f79214;
+    border-top: transparent;
+    border-left: transparent;
+    content: "";
+    height: 3px;
+    left: -16px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-100%) rotate(45deg);
+    width: 3px;
+}
+
+/* ---------------------------------------------------------------------------------- 
+    courseレイアウト
+ ------------------------------------------------------------------------------------ */
+.bl_courseUnit {
+    padding: 48px;
+}
+
+.bl_courseUnit_inner {
+    margin: 0 auto;
+    max-width: 100%;
+    padding-bottom: 88px;
+    width: 1040px;
+}
+
+.bl_courseUnit_item {
+    margin-bottom: 48px;
+    padding: 0 40px;
+}
+
+.bl_course {
+    background-color: #fcfaf5;
+    border-radius: 24px;
+}
+
+.bl_course_inner {
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 48px 0 8px;
+    width: 960px;
+}
+
+.bl_course_titleWrapper {
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+.bl_course_subTitle {
+    font-size: 15px;
+}
+
+.bl_course_title {
+    background: -webkit-linear-gradient(0deg, #f79214, #f85b0a);  /* 背景色にグラデーションを指定 */
+    -webkit-background-clip: text;  /* テキストでくり抜く*/
+    -webkit-text-fill-color: transparent;  /* くり抜いた部分は背景を表示 */
+    color: #f79214;
+    font-size: 36px;
+}
+
+.bl_course_section {
+    background-color: white;
+    border-radius: 8px;
+    margin-bottom: 32px;
+    padding: 16px 24px;
+}
+
+.bl_course_section_title {
+    font-size: 20px;
+    margin-bottom: 24px;
+    padding-left: 24px;
+    position: relative;
+}
+
+.bl_course_section_title::before {
+    background-image: url(images/asset\ 2.png);
+    background-size: contain;
+    content: "";
+    height: 20px;
+    left: -4px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+}
+
+.bl_course_section_point {
+    font-weight: 400;
+    padding-left: 14px;
+    position: relative;
+}
+
+.bl_course_section_point::before {
+    background-color: #f79315;
+    border-radius: 50%;
+    content: "";
+    height: 8px;
+    left: -2px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+}
+
+.bl_course_section_subTitleWrapper {
+    margin-bottom: 24px;
+}
+
+.bl_course_section_subTitle {
+    background-color: #fcfaf5;
+    border-radius: 24px;
+    color: #f79214;
+    display: inline-block;
+    padding: 4px 24px 4px 48px;
+    position: relative;
+}
+
+.bl_course_section_subTitle_bg::before,
+.bl_course_section_subTitle_bg2::before,
+.bl_course_section_subTitle_bg3::before,
+.bl_course_section_subTitle_bg4::before {
+    background-image: url(images/icon-pencil.png);
+    background-size: contain;
+    content: "";
+    height: 16px;
+    left: 16px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+}
+
+.bl_course_section_subTitle_bg2::before {
+    background-image: url(images/icon-calender.png);
+}
+
+.bl_course_section_subTitle_bg3::before {
+    background-image: url(images/icon-condition.png);
+}
+
+.bl_course_section_subTitle_bg4::before {
+    background-image: url(images/icon-coin.png);
+}
+
+.bl_course_section_txt {
+    color: #222;
+    font-weight: 400;
+    margin-bottom: 24px;
+    padding-left: 16px;
+}
+
+.bl_course_section_flexUnit {
+    align-items: center;
+    display: flex;
+}
+
+.bl_announce_imgWrapper {
+    flex-shrink: 0;
+    margin-right: 24px;
+    width: 92px;
+}
+
+.bl_announce_title {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.bl_announce_title > br {
+    display: none;
+}
+
+.bl_announce_txt {
+    color: #222;
+    font-weight: 400;
+}
+
+.bl_announce_emphasisTxt {
+    color: #f79214;
+    font-weight: 400;
+}
+
+/* --------------------------------------------------------------------------------------- 
+    cardレイアウト
+ ------------------------------------------------------------------------------------------ */
+.bl_cardUnit_flexUnit {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.bl_cardUnit_item {
+    margin-bottom: 16px;
+    width: 49%;
+}
+
+.bl_card_imgWrapper {
+    margin-bottom: 8px;
+}
+
+.bl_card_txtWrapper {
+    padding-left: 4px;
+}
+
+.bl_card_title {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.bl_card_txt {
+    color: #222;
+    font-weight: 400;
+}
+
+/* ------------------------------------------------------------------------
+    interviewレイアウト
+ --------------------------------------------------------------------------- */
+.bl_interviewUnit {
+    background-color: #f6f6f6;
+    padding: 0 48px;
+}
+.bl_interviewUnit_inner {
+    background-image: url(images/asset\ 27.png);
+    background-position: top 48px right;
+    background-repeat: no-repeat;
+    background-size: 264px;
+    margin: 0 auto;
+    max-width: 100%;
+    padding-bottom: 112px;
+    width: 1040px;
+}
+
+.bl_interviewUnit_flexUnit {
+    align-items: flex-start;
+    display: flex;
+    justify-content: space-between;
+}
+
+.bl_interviewUnit_flexUnit_item {
+    width: 31%;
+}
+
+.bl_interview {
+    background-color: #f6f6f6;
+    border: none;
+}
+
+.bl_interview_imgWrapper {
+    border-radius: 24px;
+    margin-bottom: 16px;
+    overflow: hidden;
+}
+
+.bl_interview_imgWrapper > img {
+    height: 192px;
+    object-fit: cover;
+    object-position: top center;
+    transform: scale(1.15);
+}
+
+.bl_interview_txt {
+    font-size: 16px;
+    line-height: 2;
+    text-align: left;
+}
+
+.bl_interview:hover img{
+    transition-duration: 0.2s;
+    transform: scale(1.4);
+}
+
+.bl_interview:hover > .bl_interview_txt {
+    color: #f79214;
+    transition-duration: 0.2s;
+}
+
+/* ---------------------------------------------------------------------------- 
+    footerレイアウト
+ ------------------------------------------------------------------------------ */
+.ly_footer {
+    background-color: #f79315;
+    padding: 0 48px;
+}
+
+.bl_footer_inner {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 72px 0 32px;
+    position: relative;
+    width: 1040px;
+}
+
+.bl_footer_anchorWrapper {
+    right: 0;
+    position: absolute;
+    top: -27px;
+    transform: translateX(-50%);
+}
+
+.bl_footer_topAnchor {
+    background-color: white;
+    border-radius: 50%;
+    display: inline-block;
+    filter: drop-shadow(1px 3px 5px rgba(0, 0, 0, 0.2));
+    height: 54px;
+    position: relative;
+    width: 54px;
+}
+
+.bl_footer_topAnchor::after {
+    border: 4px solid #f79315;
+    border-bottom: transparent;
+    border-left: transparent;
+    content: "";
+    height: 6px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    width: 6px;
+}
+
+.bl_footer_infoWrapper {
+    flex-grow: 1;
+}
+
+.bl_footer_logo {
+    width: 280px;
+    margin-bottom: 24px;
+}
+
+.bl_footer_info {
+    color: white;
+    margin-bottom: 32px;
+}
+
+.bl_footer_btn {
+    border: none;
+    border-radius: 50%;
+    height: 64px;
+    margin-right: 24px;
+    width: 64px;
+}
+
+.bl_footer_nav {
+    flex-grow: 1;
+}
+
+
+.bl_footer_nav_item {
+    margin-bottom: 40px;
+}
+
+.bl_footer_nav_item:last-child {
+    margin-bottom: 0;
+}
+
+.bl_footer_nav_link {
+    color: white;
+}
+
+.bl_footer_nav_link_secondaryTxt {
+    font-weight: 400;
+    margin-left: 20px;
+}
+
+.bl_footer_imgWrapper {
+    align-items: flex-end;
+    display: flex;
+    width: 120px;
+}
+/* ---------------------------------------------------------- 
+ヘルパークラス
+------------------------------------------------------------- */
+.hp_bgWhite {
+    background-color: white;
+}
+
+.hp_bigFont {
+    font-size: 50px;
+    font-weight: 900;
+}
+
+.hp_fontSizeBig {
+    font-size: 32px;
+}
+
+.hp_marginBottomSmall {
+    margin-bottom: 8px;
+}
+
+.hp_marginBottomMedium {
+    margin-bottom: 16px;
+}
+
+.hp_overlapBorderYellow {
+    background: linear-gradient(transparent 70%, #fef79d 70%);
+    padding-bottom: 4px;
+}
+
+/* -------------------------------------------------------------------- 
+    JS用クラス
+ ----------------------------------------------------------------------- */
+.js_currentTab {
+    color: #f79214;
+}
+
+
+/* タブレット用レイアウト */
+@media screen and (max-width: 1024px) {
+    /* ------------------------------------------------------------------- 
+    headerレイアウト
+    ---------------------------------------------------------------------- */
+    .ly_header {
+        padding: 20px 0;
+        position: fixed;
+        top: 0;
+        z-index: 10;
+    }
+
+    .bl_header_inner {
+        padding: 0 48px;
+    }
+
+    .bl_header_logoWrapper {
+        width: 200px;
+    }
+
+    .bl_header_hamburgerMenu {
+        display: block;
+    }
+
+    .bl_header_hamburgerMenu_btn {
+        align-items: center;
+        display: flex;
+        height: 22px;
+        width: 28px;
+    }
+
+    .bl_header_hamburgerMenu_btn span,
+    .bl_header_hamburgerMenu_btn span::before,
+    .bl_header_hamburgerMenu_btn span::after {
+        content: "";
+        display: block;
+        height: 4px;
+        width: 32px;
+        background-color: black;
+        position: absolute;
+    }
+
+    .bl_header_hamburgerMenu_btn span::before {
+        top: -12px;
+    }
+
+    .bl_header_hamburgerMenu_btn span::after {
+        bottom: -12px;
+    }
+
+    .bl_header_nav {
+        background-color:rgba(0, 0, 0, 0.8);
+        display: block;
+        height: 100%;
+        left: 100vw;
+        max-width: 100%;
+        overflow-y: scroll;
+        position: fixed;
+        top: 64px;
+        width: 1024px;
+        z-index: 10;
+    }
+
+
+    .bl_header_nav_item {
+        display: block;
+        margin-right: 0;
+        margin-top: 36px;
+    }
+
+    .bl_header_nav_item:last-child {
+        padding-bottom: 50px;
+        margin-bottom: 112px;
+    }
+
+    #el_hamburgerMenuCheck:checked ~ .bl_header_nav {
+        left: 0;
+    }
+    
+    .bl_header_nav_link {
+        color: white;
+        font-size: 16px;
+        letter-spacing: 4px;
+    }
+
+    .bl_header_nav_link_subTxt {
+        color: #f79214;
+        font-size: 12px;
+        line-height: 4;
+        margin-top: 8px;
+    }
+    
+    .bl_header_btn {
+        border-radius: 32px;
+        font-size: 16px;
+        padding: 20px 48px;
+    }
+
+    /* -------------------------------------------------------------------
+        heroレイアウト 
+     --------------------------------------------------------------------- */
+
+    .bl_hero_inner {
+        background-position: center bottom;
+        padding: 140px 0 68px;
+    }
+}
+
+
+
+/* スマートフォン用レイアウト */
+@media screen and (max-width: 599px) {
+    .el_articleTitle {
+        color: black;
+        font-size: 26px;
+        position: relative;
+    }
+
+    .el_articleTitle > br {
+        content: "";
+        display: block;
+    }
+
+    .el_copyRight {
+        text-align: center;
+    }
+
+    .ly_header {
+        padding: 16px 0;
+    }
+
+    .bl_header_inner {
+        padding: 0 24px;
+    }
+
+    .bl_header_logoWrapper {
+        width: 144px;
+    }
+
+    .bl_header_hamburgerMenu_btn {
+        align-items: center;
+        display: flex;
+        height: 22px;
+        width: 28px;
+    }
+
+    .bl_header_hamburgerMenu_btn span,
+    .bl_header_hamburgerMenu_btn span::before,
+    .bl_header_hamburgerMenu_btn span::after {
+        content: "";
+        display: block;
+        height: 4px;
+        width: 28px;
+        background-color: black;
+        position: absolute;
+    }
+
+    .bl_header_hamburgerMenu_btn span::before {
+        top: -10px;
+    }
+
+    .bl_header_hamburgerMenu_btn span::after {
+        bottom: -10px;
+    }
+
+    /* ---------------------------------------------------------------------- 
+        heroレイアウト
+    ------------------------------------------------------------------------- */
+    .bl_hero_inner {
+        background-image: url(images/course-hero-sp.png);
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-size: contain;
+        margin: 0 auto;
+        max-width: 100%;
+        padding: 88px 0;
+        width: 376px;
+    }
+
+    .bl_hero_txtWrapper {
+        text-align: center;
+    }
+
+    .bl_hero_txt {
+        font-size: 22px;
+        margin: 0;
+    }
+
+    /* ------------------------------------------------------------------------- 
+        aboutレイアウト
+    ---------------------------------------------------------------------------- */
+    .bl_aboutUnit {
+        padding: 0 16px;
+    }
+
+    .bl_article_titleWrapper {
+        padding: 72px 128px;
+        text-align: center;
+    }
+
+    .bl_aboutUnit_txtWrapper {
+        text-align: center;
+    }
+
+    .bl_aboutUnit_txt {
+        font-size: 15px;
+        text-align: left;
+    }
+
+    .bl_aboutUnit_txt > br {
+        display: none;
+    }
+
+    .bl_aboutUnit_txt:last-child {
+        margin-bottom: 96px;
+    }
+
+    .bl_aboutUnit_emphasisTxt {
+        font-size: 16px;
+        line-height: 2;
+        padding: 0 144px;
+    }
+
+    .bl_aboutUnit_emphasisTxt > br {
+        content: "";
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    /* -------------------------------------------------------------------------- 
+        featureレイアウト
+    ----------------------------------------------------------------------------- */
+    .bl_featureUnit {
+        padding: 0 24px;
+    }
+
+    .bl_featureUnit_balloon {
+        padding: 24px;
+        position: absolute;
+        top: -44px;
+        transform: translateX(-50%);
+        width: 80px;
+    }
+
+    .bl_featureUnit_title {
+        font-size: 20px;
+    }
+
+    .bl_featureUnit_flexUnit {
+        display: block;
+    }
+    
+    .bl_featureUnit_item {
+        margin-bottom: 24px;
+        width: 100%;
+    }
+
+    .bl_feature_txt {
+        text-align: center;
+    }
+
+    .bl_feature_txt::before {
+        left: 50%;
+        transform: translate(-152px, -50%);
+    }
+
+    /* --------------------------------------------------------------------------------
+        panelレイアウト
+    ---------------------------------------------------------------------------------- */
+    .bl_panelUnit {
+        display: block;
+        padding: 72px 0;
+    }
+
+    .bl_panelUnit_item {
+        width: 100%;
+    }
+
+    .bl_panel_titleWrapper {
+        padding: 16px 0 16px;
+    }
+
+    .bl_panel_btn {
+        font-size: 15px;
+    }
+
+    /* ---------------------------------------------------------------------------------- 
+        courseレイアウト
+    ------------------------------------------------------------------------------------ */
+    .bl_courseUnit {
+        padding: 16px;
+    }
+
+    .bl_courseUnit_inner {
+        padding-bottom: 0;   
+    }
+
+    .bl_courseUnit_item {
+        padding: 0 16px;
+    }
+
+    .bl_course_titleWrapper {
+        margin-bottom: 32px;
+        padding: 0 132px;
+        text-align: center;
+    }
+
+    .bl_course_title {
+        font-size: 24px;
+    }
+
+    .bl_course_section {
+        padding: 16px 16px;
+    }
+
+    .bl_course_section_titleWrapper {
+        text-align: center;
+    }
+
+    .bl_course_section_title {
+        display: inline-block;
+    }
+
+    .bl_course_section_subTitleWrapper {
+        text-align: center;
+    }
+
+    .bl_course_section_txt {
+        text-align: center;
+    }
+
+    .bl_course_section_flexUnit {
+        display: block;
+    }
+
+    .bl_announce_imgWrapper {
+        margin: 0 auto 16px;
+        width: 120px;
+    }
+
+    .bl_announce_title {
+        text-align: center;
+    }
+
+    .bl_announce_title > br {
+        display: block;
+    }
+
+    /* --------------------------------------------------------------------------------------- 
+        cardレイアウト
+    ------------------------------------------------------------------------------------------ */
+    .bl_cardUnit_flexUnit {
+        display: block;
+    }
+
+    .bl_cardUnit_item {
+        width: 100%;
+    }
+
+    /* ------------------------------------------------------------------------
+        interviewレイアウト
+    --------------------------------------------------------------------------- */
+    .bl_interviewUnit {
+        background-color: #f6f6f6;
+        padding: 0 48px;
+    }
+    .bl_interviewUnit_inner {
+        background-image: url(images/asset\ 27.png);
+        background-position: top 48px right 48px;
+        background-repeat: no-repeat;
+        background-size: 144px;
+        margin: 0 auto;
+        max-width: 100%;
+        padding-bottom: 112px;
+        width: 1040px;
+    }
+
+    .bl_interviewUnit_flexUnit {
+        display: flex;
+        overflow: hidden;
+    }
+
+    .bl_interviewUnit_flexUnit_item {
+        flex-shrink: 0;
+        width: 100%;
+    }
+
+    .bl_interview {
+        background-color: #f6f6f6;
+        border: none;
+    }
+
+    .bl_interview_imgWrapper {
+        border-radius: 24px;
+        margin-bottom: 16px;
+        overflow: hidden;
+    }
+
+    .bl_interview_imgWrapper > img {
+        height: 304px;
+        object-fit: cover;
+        object-position: top center;
+        transform: scale(1.15);
+    }
+
+    .bl_interview_txt {
+        font-size: 16px;
+        line-height: 2;
+        text-align: left;
+    }
+
+    .bl_interview:hover img{
+        transition-duration: 0.2s;
+        transform: scale(1.4);
+    }
+
+    .bl_interview:hover > .bl_interview_txt {
+        color: #f79214;
+        transition-duration: 0.2s;
+    }
+
+    /* ----------------------------------------------------------------
+        footerレイアウト
+     ------------------------------------------------------------------ */
+    .bl_footer_inner {
+        padding: 56px 0 32px;
+    }
+
+    .bl_footer_inner {
+        flex-direction: column;
+    }
+
+    .bl_footer_nav {
+        margin-bottom: 32px;
+        order: 1;
+    }
+
+    .bl_footer_nav_item {
+        margin-bottom: 32px;
+    }
+
+    .bl_footer_nav_link {
+        color: white;
+        font-size: 15px;
+    }
+
+    .bl_footer_imgWrapper {
+        align-self: center;
+        margin-bottom: 24px;
+        order: 2;
+    }
+    
+    .bl_footer_infoWrapper {
+        border-top: 1px solid white;
+        order: 3;
+        padding-top: 24px;
+        text-align: center;
+    }
+
+    .bl_footer_logo {
+        margin: 0 auto 24px;
+    }
+
+    .bl_footer_btnWrapper {
+        padding-left: 32px;
+    }
+
+    .bl_footer_btn {
+        height: 60px;
+        margin-right: 20px;
+        width: 60px;
+    }
+
+    /* ---------------------------------------------------------------- 
+        ヘルパークラス
+     ------------------------------------------------------------------- */
+    .hp_bigFont {
+        font-size: 30px;
+        font-weight: 900;
+    }
+
+    .hp_paddingTopSmall {
+        padding-top: 32px;
+    }
+}
+
